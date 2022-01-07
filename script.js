@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    let c = document.querySelector("#colors")
     /*addRows user story
     $(".add-rows").click(function (){
         let select = document.querySelector(".grid-container")
@@ -16,7 +17,8 @@ $(document).ready(function () {
     })*/
     //Dropdown made, function for clicking on a box to change color user story
      $('.col').click(function () {
-        let c = document.querySelector("#colors")
         $(this).css("background-color",c.value)
     })
+
+  
 })
