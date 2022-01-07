@@ -20,5 +20,8 @@ $(document).ready(function () {
         $(this).css("background-color",c.value)
     })
 
-  
+    //Fill all uncolored cells
+    $(".fill-uncolored").click(function () {
+        $(".box").css("background-color",)
+    })
 })
