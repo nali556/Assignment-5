@@ -22,6 +22,13 @@ $(document).ready(function () {
 
     //Fill all uncolored cells
     $(".fill-uncolored").click(function () {
-        $(".box").css("background-color",)
+        if($(".box").css("background-color") === "none"){
+            $(".box").css("background-color", c.value)
+        }
+    })
+
+    //Fill all cells
+    $(".fill-all").click(function () {
+        $(".box").css("background-color", c.value)
     })
 })
