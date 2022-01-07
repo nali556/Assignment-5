@@ -22,7 +22,8 @@ $(document).ready(function () {
 
     //Fill all uncolored cells
     $(".fill-uncolored").click(function () {
-        if($(".box").css("background-color") === "none"){
+        console.log($(".box").css("background-color"))
+        if($(".box").css("background-color") === "rgba(0,0,0)"){
             $(".box").css("background-color", c.value)
         }
     })
