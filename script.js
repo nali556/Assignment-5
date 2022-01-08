@@ -36,4 +36,25 @@ $(document).ready(function () {
     $(".clear-all").click(function () {
         $(".box").css("background-color", "transparent")
     })
+
+    //Mouseover
+    let isDown = false
+    $(document).mousedown(function () {
+        isDown = true
+    }).mouseup(function () {
+        isDown = false
+    })
+
+    $('.box').hover(function () {
+        if (isDown) {
+            let currentSize = $('.box').css('font-size');
+            currentSize = 50;
+            $(this).css('font-size', currentSize)
+            $(this).css("background-color", c.value)
+        } else {
+            let currentSize = $('.box').css('font-size');
+            currentSize = 16;
+            $(this).css('font-size', currentSize)
+        }
+    })
 })
