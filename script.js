@@ -34,6 +34,6 @@ $(document).ready(function () {
 
     //Clear all cells
     $(".clear-all").click(function () {
-        
+        $(".box").css("background-color", "transparent")
     })
 })
