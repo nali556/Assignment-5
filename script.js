@@ -31,4 +31,9 @@ $(document).ready(function () {
     $(".fill-all").click(function () {
         $(".box").css("background-color", c.value)
     })
+
+    //Clear all cells
+    $(".clear-all").click(function () {
+        
+    })
 })
