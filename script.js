@@ -24,7 +24,7 @@ $(document).ready(function () {
         console.log(container)
     })
     //Dropdown made, function for clicking on a box to change color user story
-     $('.col').click(function () {
+     $(".box").click(function () {
         $(this).css("background-color",c.value)
     })
 
