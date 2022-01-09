@@ -1,18 +1,27 @@
 $(document).ready(function () {
     let c = document.querySelector("#colors")
+    let counter = 9
     //addRows user story
     $(".add-rows").click(function (){
         let divRow = document.createElement("div")
         divRow.classList.add("row")
+        let divBox1 = document.createElement("div")
+        divBox1.classList.add("col", "box", "border", "border-dark", "d-flex", "justify-content-center", "align-items-center")
+        divBox1.innerHTML = "Column"
+        let divBox2 = document.createElement("div")
+        divBox2.classList.add("col", "box", "border", "border-dark", "d-flex", "justify-content-center", "align-items-center")
+        divBox2.innerHTML = "Column"
+        let divBox3 = document.createElement("div")
+        divBox3.innerHTML = "Column"
+        divBox3.classList.add("col", "box", "border", "border-dark", "d-flex", "justify-content-center", "align-items-center")
+        divRow.appendChild(divBox1)
+        divRow.appendChild(divBox2)
+        divRow.appendChild(divBox3)
         console.log(divRow)
-        let divBox = document.createElement("div")
-        divBox.classList.add("col", "box", "border", "border-dark", "d-flex", "justify-content-center", "align-items-center")
-        console.log(divBox)
-        divRow.appendChild(divBox)
-        divRow.appendChild(divBox)
-        divRow.appendChild(divBox)
-        console.log(divRow)
-
+        //Select the container 
+        container = document.querySelector(".grid-container")
+        container.appendChild(divRow)
+        console.log(container)
     })
     //Dropdown made, function for clicking on a box to change color user story
      $('.col').click(function () {
