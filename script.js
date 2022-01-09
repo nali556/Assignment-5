@@ -2,11 +2,34 @@ $(document).ready(function () {
     let c = document.querySelector("#colors")
     let counter = 9
     //addRows user story
+   
     $(".add-rows").click(function (){
+        /*Steps:
+        1. Create row div.
+        2. Add boxes according to how many columns exist
+        3. Add to grid container div
+        */
+        let rowElement = document.createElement("div")
+        rowElement.className = "row"
+        let box = document.createElement("div")
+        box.className = "col box border border-dark d-flex justify-content-center align-items-center"
+        box.innerHTML = "Column"
+        $( "#row-one" ).each( function(){
+            console.log( "number of children for " + $( this ).index() + "th parent div is " + $( this ).children( ".col" ).length )
+            for(let i=0; i < $( this ).children( ".col" ).length; i++){
+                $(rowElement).append(box.clone())
+            }
+            console.log(rowElement)
+          })
+
         
     })
     //Adding Columns
     $(".add-columns").click(function () {
+        /*Steps:
+        1. Create the box
+        2. For all rows that exist, append another box to the ones that exist.
+        */
         let divCol1 = document.createElement("div")
         divCol1.classList.add("col", "box", "border", "border-dark", "d-flex", "justify-content-center", "align-items-center")
         divCol1.innerHTML = "Column"
