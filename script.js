@@ -1,20 +1,19 @@
 $(document).ready(function () {
     let c = document.querySelector("#colors")
-    /*addRows user story
+    //addRows user story
     $(".add-rows").click(function (){
-        let select = document.querySelector(".grid-container")
-        let rowElement = document.createElement("div")
-        rowElement.classList.add("row")
-        console.log(rowElement)
-        let box = document.getElementById("row-one")
-        console.log(box)
-        
-        rowElement.appendChild(box)
-        rowElement.appendChild(box)
-        rowElement.appendChild(box)
-        console.log(rowElement)
+        let divRow = document.createElement("div")
+        divRow.classList.add("row")
+        console.log(divRow)
+        let divBox = document.createElement("div")
+        divBox.classList.add("col", "box", "border", "border-dark", "d-flex", "justify-content-center", "align-items-center")
+        console.log(divBox)
+        divRow.appendChild(divBox)
+        divRow.appendChild(divBox)
+        divRow.appendChild(divBox)
+        console.log(divRow)
 
-    })*/
+    })
     //Dropdown made, function for clicking on a box to change color user story
      $('.col').click(function () {
         $(this).css("background-color",c.value)
@@ -43,6 +42,8 @@ $(document).ready(function () {
         isDown = true
     }).mouseup(function () {
         isDown = false
+        let currentSize = 16
+        $(".box").css('font-size', currentSize)
     })
 
     $('.box').hover(function () {
@@ -51,10 +52,10 @@ $(document).ready(function () {
             currentSize = 50;
             $(this).css('font-size', currentSize)
             $(this).css("background-color", c.value)
-        } else {
+        } /*else {
             let currentSize = $('.box').css('font-size');
             currentSize = 16;
             $(this).css('font-size', currentSize)
-        }
+        }*/
     })
 })
