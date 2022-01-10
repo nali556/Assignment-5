@@ -49,7 +49,6 @@ $(document).ready(function () {
         $( ".row" ).each( function(){
             $(this).children().last().remove()
         })
-        
        
     })
 
@@ -60,9 +59,12 @@ $(document).ready(function () {
 
     //Fill all uncolored cells
     $(".fill-uncolored").click(function () {
-        if($(".box").css("background-color") === "rgba(0, 0, 0, 0)"){
-            $(".box").css("background-color", c.value)
-        }
+        $( ".box" ).each( function(){
+            if($(this).css("background-color") === "rgba(0, 0, 0, 0)"){
+                $(this).css("background-color", c.value)
+            }
+        })
+        
     })
 
     //Fill all cells
