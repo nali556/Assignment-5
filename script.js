@@ -49,7 +49,7 @@ $(document).ready(function () {
 
 
     //Dropdown made, function for clicking on a box to change color user story
-     $(".box").on("click", function () {
+     $(document).on("click", ".box", function () {
         $(this).css("background-color",c.value)
     })
 
@@ -80,7 +80,7 @@ $(document).ready(function () {
         $(".box").css('font-size', currentSize)
     })
 
-    $('.box').hover(function () {
+    $(document).on("mouseenter mouseleave", ".box", function () {
         if (isDown) {
             let currentSize = $('.box').css('font-size');
             currentSize = 50;
