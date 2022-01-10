@@ -37,15 +37,12 @@ $(document).ready(function () {
         
         $(".row").append(divCol1)
 
-        //$(".row").add(divCol1)
-
-       /* let container = document.querySelector(".grid-container")
-        container.appendChild(divRow)
-        console.log(container)*/
-
-
     })
-
+    //Removing Rows
+    $(".remove-rows").click(function () {
+        let grid = document.getElementById("grid")
+        grid.removeChild(grid.lastElementChild)
+    })
 
 
     //Dropdown made, function for clicking on a box to change color user story
@@ -86,10 +83,6 @@ $(document).ready(function () {
             currentSize = 50;
             $(this).css('font-size', currentSize)
             $(this).css("background-color", c.value)
-        } /*else {
-            let currentSize = $('.box').css('font-size');
-            currentSize = 16;
-            $(this).css('font-size', currentSize)
-        }*/
+        } 
     })
 })
