@@ -44,6 +44,14 @@ $(document).ready(function () {
         grid.removeChild(grid.lastElementChild)
     })
 
+    //Removing Columns
+    $(".remove-columns").click(function () {
+        $( ".row" ).each( function(){
+            $(this).children().last().remove()
+        })
+        
+       
+    })
 
     //Dropdown made, function for clicking on a box to change color user story
      $(document).on("click", ".box", function () {
