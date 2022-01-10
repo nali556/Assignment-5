@@ -1,6 +1,5 @@
 $(document).ready(function () {
     let c = document.querySelector("#colors")
-    let counter = 9
     //addRows user story
    
     $(".add-rows").click(function (){
@@ -11,15 +10,17 @@ $(document).ready(function () {
         */
         let rowElement = document.createElement("div")
         rowElement.className = "row"
-        let box = document.createElement("div")
-        box.className = "col box border border-dark d-flex justify-content-center align-items-center"
-        box.innerHTML = "Column"
+       
         $( "#row-one" ).each( function(){
             console.log( "number of children for " + $( this ).index() + "th parent div is " + $( this ).children( ".col" ).length )
             for(let i=0; i < $( this ).children( ".col" ).length; i++){
-                $(rowElement).append(box.clone())
+                let box = document.createElement("div")
+                box.className = "col box border border-dark d-flex justify-content-center align-items-center"
+                box.innerHTML = "Column"
+                $(rowElement).append(box)
             }
             console.log(rowElement)
+            $(".grid-container").append(rowElement)
           })
 
         
@@ -31,7 +32,7 @@ $(document).ready(function () {
         2. For all rows that exist, append another box to the ones that exist.
         */
         let divCol1 = document.createElement("div")
-        divCol1.classList.add("col", "box", "border", "border-dark", "d-flex", "justify-content-center", "align-items-center")
+        divCol1.classList = "col box border border-dark d-flex justify-content-center align-items-center"
         divCol1.innerHTML = "Column"
         
         $(".row").append(divCol1)
@@ -48,7 +49,7 @@ $(document).ready(function () {
 
 
     //Dropdown made, function for clicking on a box to change color user story
-     $(".box").click(function () {
+     $(".box").on("click", function () {
         $(this).css("background-color",c.value)
     })
 
